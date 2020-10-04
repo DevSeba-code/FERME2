@@ -1,0 +1,38 @@
+{%extends 'app1/base.html'%} {%block content%} {%load static%}{% load crispy_forms_tags %}
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="{%static 'img/logo.jpeg'%}" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form method="POST">
+            {% csrf_token %} {{ login_form|crispy }}
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">¿Has olvidado tu contraseña?</a>
+            <a class="underlineHover" href="{% url 'register' %}">¿No tienes una cuenta?, ¡Registrate!</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+{%endblock content%}

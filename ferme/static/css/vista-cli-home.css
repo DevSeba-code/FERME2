@@ -1,0 +1,48 @@
+#img3{
+    width: 900px;
+    height: 350px;
+    border-radius: 3%;
+}
+
+#img2{
+    width: 900px;
+    height: 350px;
+    border-radius: 3%;
+}
+
+#img1{
+    background-color: rgba(121, 121, 121,0.3);
+    width: 900px;
+    height: 350px;
+    border-radius: 3%;
+}
+
+#carrusel{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#categorias{
+    padding: 10px;
+}
+
+#tienda-title{
+    font-family: 'Epilogue', sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.card{
+    padding: 10px;
+}
+
+.card-title h4{
+    color: white;
+}
+
+#logo{
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 30px;
+    
+}
