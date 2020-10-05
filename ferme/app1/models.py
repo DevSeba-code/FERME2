@@ -3,9 +3,16 @@ from django.contrib.auth.models import User
 # # Create your models here.
 
 class Cliente(models.Model):
+<<<<<<< HEAD
     nombre = models.CharField(max_length=200, null= True)
     email = models.CharField(max_length=200, null= True)
     apellido = models.CharField(max_length=200, null= True)
+=======
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE,null= True, blank =True)
+    nombre = models.CharField(max_length=200, null= True)
+    email = models.CharField(max_length=200, null= True)
+
+>>>>>>> 2fadef9c7957c0352dc9d745c30918a87e0fe415
     def __str__(self):
         return self.nombre   
 
