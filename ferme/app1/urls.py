@@ -15,5 +15,7 @@ urlpatterns = [
     path("contact/", views.contact, name= "contact"),
     path("about/", views.about, name= "about"),
     
+    path('update_producto/',views.updateProducto, name="update_producto"),
+
   
 ]

@@ -28,7 +28,27 @@
     <link rel="stylesheet" href="{%static 'css/flaticon.css'%}">
     <link rel="stylesheet" href="{%static 'css/icomoon.css'%}">
     <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    
 
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+        function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+    </script>
 </head>
 
 <body>
@@ -55,7 +75,7 @@
                     </li>
                     <li class="nav-item"><a style="color: orange;" href="{% url 'about' %}" class="nav-link">Acerca de Nosotros</a></li>
                     <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contacto</a></li>
-                    <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class=""></span>[0]</a></li>
+                    <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class=""></span>{{carroItem}}</a></li>
 
 
 
@@ -80,7 +100,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{% static 'js/google-map.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
     <script>
         $(document).ready(function() {
 
@@ -117,6 +137,8 @@
 
         });
     </script>
+
+
 
 </body>
 
